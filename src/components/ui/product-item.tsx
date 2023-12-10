@@ -34,7 +34,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
         <p className="overflow-hidden text-ellipsis whitespace-nowrap text-sm">
           {product.name}
         </p>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 overflow-hidden whitespace-nowrap text-sm">
           {product.discountPercentage > 0 ? (
             <>
               <p className="flex font-semibold">
