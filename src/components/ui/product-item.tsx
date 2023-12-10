@@ -10,13 +10,13 @@ interface ProductItemProps {
 const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <div className="flex max-w-[156px] flex-col gap-4">
-      <div className="relative flex h-[170px] w-[156px]  items-center justify-center rounded-lg bg-accent">
+      <div className="relative flex h-[170px] w-[156px] items-center justify-center rounded-lg bg-accent">
         <Image
           src={product.imageUrls[0]}
           height={0}
           width={0}
           sizes="100vw"
-          className="h-auto max-h-[70%] w-auto max-w-[80%]"
+          className="h-auto max-h-[55%] w-auto max-w-[80%]"
           style={{
             objectFit: "contain",
           }}
@@ -24,7 +24,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
         />
 
         {product.discountPercentage > 0 && (
-          <Badge className="absolute left-3 top-3 px-2 py-[2px]">
+          <Badge className="absolute left-3 top-3 items-center px-2 py-[2px]">
             <ArrowDownIcon size={14} /> {product.discountPercentage}%
           </Badge>
         )}
