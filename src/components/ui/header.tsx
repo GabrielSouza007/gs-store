@@ -88,15 +88,17 @@ const Header = () => {
                 Fazer Logout
               </Button>
             )}
-            <Link href="/">
-              <Button
-                variant={"outline"}
-                className="w-full justify-start gap-2"
-              >
-                <HomeIcon size={16} />
-                Início
-              </Button>
-            </Link>
+            <SheetClose asChild>
+              <Link href="/">
+                <Button
+                  variant={"outline"}
+                  className="w-full justify-start gap-2"
+                >
+                  <HomeIcon size={16} />
+                  Início
+                </Button>
+              </Link>
+            </SheetClose>
 
             <Button variant={"outline"} className="w-full justify-start gap-2">
               <PercentIcon size={16} />
