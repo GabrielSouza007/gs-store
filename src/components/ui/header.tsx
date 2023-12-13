@@ -15,6 +15,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { Button } from "./button";
 import { Card } from "./card";
+import Cart from "./cart";
 import {
   Sheet,
   SheetClose,
@@ -40,7 +41,7 @@ const Header = () => {
           </Button>
         </SheetTrigger>
 
-        <SheetContent>
+        <SheetContent side={"left"}>
           <SheetHeader className="text-left text-lg font-semibold">
             Menu
           </SheetHeader>
@@ -126,9 +127,17 @@ const Header = () => {
         </h1>
       </Link>
 
-      <Button size="icon" variant={"outline"}>
-        <ShoppingCartIcon />
-      </Button>
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button size="icon" variant={"outline"}>
+            <ShoppingCartIcon />
+          </Button>
+        </SheetTrigger>
+
+        <SheetContent>
+          <Cart />
+        </SheetContent>
+      </Sheet>
     </Card>
   );
 };
