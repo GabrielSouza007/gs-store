@@ -12,15 +12,15 @@
 
 - React: A popular JavaScript library for building interactive user interfaces.
 
-- **Next.js 13**: A React framework that offers server-side rendering (SSR), static generation (SSG), among many other features.
+- Next.js 13: A React framework that offers server-side rendering (SSR), static generation (SSG), among many other features.
 
-- **Next Auth**: Library for user authentication with OAuth.
+- Next Auth: Library for user authentication with OAuth.
 
-- Postgres\*\*: A relational database management system.
+- Postgres: A relational database management system.
 
 - Prism: An ORM (Object-Relational Mapping) for Node.js and TypeScript.
 
-- Shadcn/ui\*\*: A library of reusable and stylizable UI components.
+- Shadcn/ui: A library of reusable and stylizable UI components.
 
 - Tailwind CSS: A CSS framework that offers several classes for use that are already pre-styled.
 
@@ -28,14 +28,14 @@
 
 ## Features 📦
 
-- Sign in with Google\*\*: We allow users to sign in using their Google accounts for a simplified authentication experience.
+- Sign in with Google: We allow users to sign in using their Google accounts for a simplified authentication experience.
 
-- Category browsing\*\*: Users can explore products by category, making it easier to search and buy.
+- Category browsing: Users can explore products by category, making it easier to search and buy.
 
-- Product Discounts\*\*: Some products may have special discounts, allowing users to save on their purchases.
+- Product Discounts: Some products may have special discounts, allowing users to save on their purchases.
 
-- **Gerenciamento do Carrinho de Compras**: Os usuários podem adicionar produtos ao seu carrinho de compras, remover produtos e também modificar a quantidade de um produto no carrinho de compras conforme necessário.
+- Shopping Cart Management: Users can add products to their shopping cart, remove products and also modify the quantity of a product in the shopping cart as needed.
 
-- **Pagamento do Pedido com a API do Stripe**: Oferecemos uma experiência segura de pagamento online com a integração da API do Stripe, incluindo o uso de webhooks para processar eventos relacionados ao pagamento. Os usuários podem concluir seus pedidos com facilidade e segurança.
+- Order payment with the Stripe API: We offer a secure online payment experience with Stripe API integration, including the use of webhooks to process payment-related events. Users can complete their orders easily and securely.
 
 Made with ♥ by Gabriel :wave:
