@@ -10,32 +10,32 @@
 
 ## Technologies 🚀
 
-- React: A popular JavaScript library for building interactive user interfaces.
+- **React**: A popular JavaScript library for building interactive user interfaces.
 
-- Next.js 13: A React framework that offers server-side rendering (SSR), static generation (SSG), among many other features.
+- **Next.js 13**: A React framework that offers server-side rendering (SSR), static generation (SSG), among many other features.
 
-- Next Auth: Library for user authentication with OAuth.
+- **Next Auth**: Library for user authentication with OAuth.
 
-- Postgres: A relational database management system.
+- **Postgres**: A relational database management system.
 
-- Prism: An ORM (Object-Relational Mapping) for Node.js and TypeScript.
+- **Prism**: An ORM (Object-Relational Mapping) for Node.js and TypeScript.
 
-- Shadcn/ui: A library of reusable and stylizable UI components.
+- **Shadcn/ui**: A library of reusable and stylizable UI components.
 
-- Tailwind CSS: A CSS framework that offers several classes for use that are already pre-styled.
+- **Tailwind CSS**: A CSS framework that offers several classes for use that are already pre-styled.
 
-- Stripe API: A popular payment API for securely processing online payments.
+- **Stripe API**: A popular payment API for securely processing online payments.
 
 ## Features 📦
 
-- Sign in with Google: We allow users to sign in using their Google accounts for a simplified authentication experience.
+- **Sign in with Google**: We allow users to sign in using their Google accounts for a simplified authentication experience.
 
-- Category browsing: Users can explore products by category, making it easier to search and buy.
+- **Category browsing**: Users can explore products by category, making it easier to search and buy.
 
-- Product Discounts: Some products may have special discounts, allowing users to save on their purchases.
+- **Product Discounts**: Some products may have special discounts, allowing users to save on their purchases.
 
-- Shopping Cart Management: Users can add products to their shopping cart, remove products and also modify the quantity of a product in the shopping cart as needed.
+- **Shopping Cart Management**: Users can add products to their shopping cart, remove products and also modify the quantity of a product in the shopping cart as needed.
 
-- Order payment with the Stripe API: We offer a secure online payment experience with Stripe API integration, including the use of webhooks to process payment-related events. Users can complete their orders easily and securely.
+- **Order payment with the Stripe API**: We offer a secure online payment experience with Stripe API integration, including the use of webhooks to process payment-related events. Users can complete their orders easily and securely.
 
 Made with ♥ by Gabriel :wave:
