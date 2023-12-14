@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: "fsw-store.s3.sa-east-1.amazonaws.com",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "pngimg.com",
+        pathname: "**",
+      },
     ],
   },
 };
