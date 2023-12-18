@@ -89,6 +89,7 @@ const Header = () => {
                 Fazer Logout
               </Button>
             )}
+
             <SheetClose asChild>
               <Link href="/">
                 <Button
