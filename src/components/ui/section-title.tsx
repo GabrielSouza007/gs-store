@@ -1,10 +1,20 @@
+import Link from "next/link";
 import { ComponentProps } from "react";
 
-const SectionTitle = ({ children, ...props }: ComponentProps<"p">) => {
+interface SectionTitleProps extends ComponentProps<"span"> {
+  url: string;
+}
+
+const SectionTitle = ({ children, url, ...props }: SectionTitleProps) => {
   return (
-    <p className="mb-3 pl-5 font-bold uppercase" {...props}>
-      {children}
-    </p>
+    <div className="flex justify-between px-5">
+      <span className="mb-3 font-bold uppercase" {...props}>
+        {children}
+      </span>
+      <Link href={url} className="text-xs font-semibold uppercase">
+        Ver mais
+      </Link>
+    </div>
   );
 };
 

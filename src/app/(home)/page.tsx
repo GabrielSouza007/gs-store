@@ -36,14 +36,14 @@ export default async function Home() {
       </div>
 
       <div>
-        <SectionTitle>Ofertas</SectionTitle>
+        <SectionTitle url="/deals">Ofertas</SectionTitle>
         <ProductList products={deals} />
       </div>
 
       <PromoBanner src="/banner-home-02.svg" alt="" />
 
       <div>
-        <SectionTitle>Teclados</SectionTitle>
+        <SectionTitle url="/category/keyboards">Teclados</SectionTitle>
         <ProductList products={keyboards} />
       </div>
 
@@ -52,7 +52,7 @@ export default async function Home() {
       </div>
 
       <div>
-        <SectionTitle>Mouses</SectionTitle>
+        <SectionTitle url="/category/mouses">Mouses</SectionTitle>
         <ProductList products={mouses} />
       </div>
     </div>
