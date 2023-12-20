@@ -14,7 +14,7 @@
 
   // prettier
   "prettier.arrowParens": "always",
-  "prettier.printWidth": 120,
+  "prettier.printWidth": 80,
   "prettier.trailingComma": "all",
   "prettier.bracketSpacing": true,
   "prettier.enable": true,
@@ -40,7 +40,7 @@
   },
 
   // terminal
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.profiles.windows": {
     "Git Bash": {
       "source": "Git Bash"
