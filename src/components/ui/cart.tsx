@@ -19,10 +19,12 @@ const Cart = () => {
     const checkout = await createCheckout(products);
 
     const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+
     stripe?.redirectToCheckout({
       sessionId: checkout.id,
     });
   };
+
   return (
     <div className="flex h-full flex-col gap-8">
       <Badge
@@ -51,6 +53,7 @@ const Cart = () => {
           </div>
         </ScrollArea>
       </div>
+
       {products.length > 0 && (
         <div className="flex flex-col gap-3">
           <Separator />
@@ -69,16 +72,16 @@ const Cart = () => {
 
           <Separator />
 
-          <div className="flex flex-wrap items-center justify-between text-xs">
+          <div className="flex items-center justify-between text-xs">
             <p>Descontos</p>
-            <p>- R$ {totalDiscount.toFixed(2)}</p>
+            <p>-R${totalDiscount.toFixed(2)}</p>
           </div>
 
           <Separator />
 
           <div className="flex items-center justify-between text-xs font-bold">
             <p>Total</p>
-            <p>R$ {total.toFixed(2)}</p>
+            <p>R${total.toFixed(2)}</p>
           </div>
           <Button
             className="m-7 font-bold uppercase"

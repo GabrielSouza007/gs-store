@@ -41,7 +41,7 @@ const CartItem = ({ products }: CartItemProps) => {
           />
         </div>
         <div className="flex flex-col">
-          <p className="whitespace-nowrap text-xs">{products.name}</p>
+          <p className="text-xs">{products.name}</p>
 
           <div className="flex items-center gap-2">
             <p className="text-sm font-bold">
@@ -61,7 +61,7 @@ const CartItem = ({ products }: CartItemProps) => {
               className="h-8 w-8"
               onClick={handleDecreaseProductQuantityClick}
             >
-              <ArrowLeftIcon size={16} />
+              <ArrowLeftIcon size={16} className="h-4 w-4" />
             </Button>
 
             <span className="text-xs">{products.quantity}</span>
@@ -72,7 +72,7 @@ const CartItem = ({ products }: CartItemProps) => {
               className="h-8 w-8"
               onClick={handleIncreaseProductQuantityClick}
             >
-              <ArrowRightIcon size={16} />
+              <ArrowRightIcon size={16} className="h-4 w-4" />
             </Button>
           </div>
         </div>
@@ -82,8 +82,9 @@ const CartItem = ({ products }: CartItemProps) => {
         size={"icon"}
         variant={"outline"}
         onClick={handleRemoveProductsFromCartClick}
+        className="h-8 w-8"
       >
-        <TrashIcon size={16} />
+        <TrashIcon size={16} className="h-4 w-4" />
       </Button>
     </div>
   );
