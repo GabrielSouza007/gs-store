@@ -1,21 +1,34 @@
 import { createCheckout } from "@/actions/checkout";
+import { createOrder } from "@/actions/order";
 import { computeProductTotalPrices } from "@/helpers/products";
 import { CartContext } from "@/providers/cart";
 import { loadStripe } from "@stripe/stripe-js";
-import { ShoppingCartIcon } from "lucide-react";
+import { ShoppingBasket, ShoppingCartIcon } from "lucide-react";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
 import { useContext } from "react";
 import { Badge } from "./badge";
 import { Button } from "./button";
 import CartItem from "./cart-items";
 import { ScrollArea } from "./scroll-area";
 import { Separator } from "./separator";
+import { SheetClose } from "./sheet";
 
 interface CartProps {}
 
 const Cart = () => {
+  const { data } = useSession();
+
   const { products, subTotal, total, totalDiscount } = useContext(CartContext);
 
   const handleFinishPurchaseClick = async () => {
+    if (!data?.user) {
+      return;
+    }
+
+    await createOrder(products, (data?.user as any).id);
+
     const checkout = await createCheckout(products);
 
     const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
@@ -46,9 +59,29 @@ const Cart = () => {
                 />
               ))
             ) : (
-              <p className="text-center font-semibold">
-                O seu carrinho está vazio.
-              </p>
+              <div className="mt-20 flex flex-col items-center justify-center gap-4">
+                <Image
+                  src="/cart.svg"
+                  alt="Empty Cart"
+                  width="220"
+                  height="220"
+                  className="flex items-center justify-center"
+                />
+                <strong className="mb-2 text-sm text-purple-500">
+                  Seu carrinho está vazio.
+                </strong>
+                <SheetClose asChild>
+                  <Link href="/deals">
+                    <Button
+                      variant="outline"
+                      className="gap-2 rounded-full text-sm font-bold"
+                    >
+                      <ShoppingBasket size={18} />
+                      Vá as compras
+                    </Button>
+                  </Link>
+                </SheetClose>
+              </div>
             )}
           </div>
         </ScrollArea>
