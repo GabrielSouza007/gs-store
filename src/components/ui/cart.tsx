@@ -27,9 +27,9 @@ const Cart = () => {
       return;
     }
 
-    await createOrder(products, (data?.user as any).id);
+    const order = await createOrder(products, (data?.user as any).id);
 
-    const checkout = await createCheckout(products);
+    const checkout = await createCheckout(products, order.id);
 
     const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
@@ -59,7 +59,7 @@ const Cart = () => {
                 />
               ))
             ) : (
-              <div className="mt-20 flex flex-col items-center justify-center gap-4">
+              <div className="mt-32 flex flex-col items-center justify-center gap-4">
                 <Image
                   src="/cart.svg"
                   alt="Empty Cart"
@@ -77,7 +77,7 @@ const Cart = () => {
                       className="gap-2 rounded-full text-sm font-bold"
                     >
                       <ShoppingBasket size={18} />
-                      Vá as compras
+                      Vá às compras
                     </Button>
                   </Link>
                 </SheetClose>
