@@ -3,11 +3,12 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Separator } from "@radix-ui/react-separator";
 import {
+  AlignJustify,
   HomeIcon,
-  ListOrderedIcon,
   LogInIcon,
   LogOutIcon,
   MenuIcon,
+  Package,
   PercentIcon,
   ShoppingCartIcon,
 } from "lucide-react";
@@ -42,9 +43,7 @@ const Header = () => {
         </SheetTrigger>
 
         <SheetContent className="w-[320px]" side={"left"}>
-          <SheetHeader className="text-left text-lg font-semibold">
-            Menu
-          </SheetHeader>
+          <SheetHeader className="text-lg font-bold">Menu</SheetHeader>
 
           {status === "authenticated" && data?.user && (
             <div className="flex flex-col">
@@ -62,12 +61,13 @@ const Header = () => {
                 </Avatar>
                 <div className="flex flex-col">
                   <p className="font-medium">{data.user.name}</p>
-                  <p className="text-sm opacity-75">Boas Compras!</p>
+                  <p className="text-xs opacity-75">Boas compras!</p>
                 </div>
               </div>
               <Separator />
             </div>
           )}
+
           <div className="mt-4 flex flex-col gap-2">
             {status === "unauthenticated" && (
               <Button
@@ -103,6 +103,18 @@ const Header = () => {
             </SheetClose>
 
             <SheetClose asChild>
+              <Link href="/orders">
+                <Button
+                  variant={"outline"}
+                  className="w-full justify-start gap-2"
+                >
+                  <Package size={16} />
+                  Meus Pedidos
+                </Button>
+              </Link>
+            </SheetClose>
+
+            <SheetClose asChild>
               <Link href="/deals">
                 <Button
                   variant="outline"
@@ -120,7 +132,7 @@ const Header = () => {
                   variant={"outline"}
                   className="w-full justify-start gap-2"
                 >
-                  <ListOrderedIcon size={16} />
+                  <AlignJustify size={16} />
                   Catálogo
                 </Button>
               </Link>
