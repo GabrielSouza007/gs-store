@@ -65,11 +65,10 @@ const Cart = () => {
                   alt="Empty Cart"
                   width="220"
                   height="220"
-                  className="flex items-center justify-center"
                 />
-                <strong className="mb-2 text-sm text-purple-500">
+                <span className="mb-2 font-bold text-[#5033c3]">
                   Seu carrinho está vazio.
-                </strong>
+                </span>
                 <SheetClose asChild>
                   <Link href="/deals">
                     <Button

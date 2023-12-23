@@ -3,13 +3,26 @@ import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/prisma";
 import { Package } from "lucide-react";
 import { getServerSession } from "next-auth";
+import Image from "next/image";
 import OrderItem from "./components/order-item";
 
 async function OrderPage() {
   const session = await getServerSession(authOptions);
 
   if (!session || !session.user) {
-    return <p>Access Denied</p>;
+    return (
+      <div className="flex h-full flex-col items-center justify-center gap-0">
+        <Image
+          src="/warning.svg"
+          alt="Warning alert"
+          width="192"
+          height="192"
+        />
+        <span className="text-xl font-semibold text-[#5033c3]">
+          Acesso Negado
+        </span>
+      </div>
+    );
   }
 
   const orders = await db.order.findMany({
