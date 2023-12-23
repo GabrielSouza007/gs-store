@@ -34,7 +34,7 @@ const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
         <p className="text-xs">{orderProduct.product.name}</p>
 
         <div className="flex w-full items-center justify-between gap-1">
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             <p className="text-sm font-bold">
               R$ {productWithTotalPrice.totalPrice.toFixed(2)}
             </p>
