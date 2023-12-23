@@ -14,7 +14,7 @@
 
   // prettier
   "prettier.arrowParens": "always",
-  "prettier.printWidth": 80,
+  "prettier.printWidth": 120,
   "prettier.trailingComma": "all",
   "prettier.bracketSpacing": true,
   "prettier.enable": true,
