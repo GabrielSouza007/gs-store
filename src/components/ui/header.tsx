@@ -37,9 +37,11 @@ const Header = () => {
   const handleLoginClick = async () => {
     await signIn();
   };
+
   const handleLogoutClick = async () => {
     await signOut();
   };
+
   return (
     <Card className="flex items-center justify-between p-[1.875rem]">
       <Sheet>
@@ -49,7 +51,7 @@ const Header = () => {
           </Button>
         </SheetTrigger>
 
-        <SheetContent className="w-[320px]" side={"left"}>
+        <SheetContent className="w-[21.875rem]" side={"left"}>
           <SheetHeader className="text-lg font-bold">Menu</SheetHeader>
 
           {status === "authenticated" && data?.user && (
@@ -156,7 +158,7 @@ const Header = () => {
 
       <Sheet>
         <SheetTrigger asChild>
-          <Button size="icon" variant={"outline"} className="relative">
+          <Button size="icon" variant="outline" className="relative">
             {cartQuantityItems > 0 && (
               <span className="absolute right-[calc(-1.25rem/2)] top-[calc(-1.25rem/2)] flex h-6 w-6 items-center justify-center rounded-lg bg-primary text-sm font-bold">
                 {cartQuantityItems}
@@ -166,7 +168,7 @@ const Header = () => {
           </Button>
         </SheetTrigger>
 
-        <SheetContent className="w-[320px]">
+        <SheetContent className="w-[21.875rem] lg:w-[21.875rem] lg:max-w-[21.875rem]">
           <Cart />
         </SheetContent>
       </Sheet>
