@@ -3,17 +3,15 @@ import { createOrder } from "@/actions/order";
 import { computeProductTotalPrices } from "@/helpers/products";
 import { CartContext } from "@/providers/cart";
 import { loadStripe } from "@stripe/stripe-js";
-import { ShoppingBasket, ShoppingCartIcon } from "lucide-react";
+import { ShoppingCartIcon } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import Link from "next/link";
 import { useContext } from "react";
 import { Badge } from "./badge";
 import { Button } from "./button";
 import CartItem from "./cart-items";
 import { ScrollArea } from "./scroll-area";
 import { Separator } from "./separator";
-import { SheetClose } from "./sheet";
 
 interface CartProps {}
 
@@ -69,17 +67,6 @@ const Cart = () => {
                 <span className="mb-2 font-bold text-[#5033c3]">
                   Seu carrinho está vazio.
                 </span>
-                <SheetClose asChild>
-                  <Link href="/deals">
-                    <Button
-                      variant="outline"
-                      className="gap-2 rounded-full text-sm font-bold"
-                    >
-                      <ShoppingBasket size={18} />
-                      Vá às compras
-                    </Button>
-                  </Link>
-                </SheetClose>
               </div>
             )}
           </div>
