@@ -51,7 +51,7 @@ const Header = () => {
           </Button>
         </SheetTrigger>
 
-        <SheetContent className="w-[21.875rem]" side={"left"}>
+        <SheetContent className="lg-w-[21.875rem] w-full" side={"left"}>
           <SheetHeader className="text-lg font-bold">Menu</SheetHeader>
 
           {status === "authenticated" && data?.user && (
@@ -168,7 +168,7 @@ const Header = () => {
           </Button>
         </SheetTrigger>
 
-        <SheetContent className="w-[21.875rem] lg:w-[21.875rem] lg:max-w-[21.875rem]">
+        <SheetContent className="w-full lg:w-[21.875rem]">
           <Cart />
         </SheetContent>
       </Sheet>
