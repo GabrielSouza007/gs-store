@@ -3,7 +3,7 @@
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
   "editor.bracketPairColorization.enabled": true,
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
   "editor.semanticHighlighting.enabled": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
