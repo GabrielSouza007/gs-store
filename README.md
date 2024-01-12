@@ -1,7 +1,7 @@
 <h1 align="center"> GS Store </h1>
 
 <h6 align="center"> 
-	If you want to preview the application, click <a href="#">here</a>.
+	If you want to preview the application, click <a href="https://gs-store.vercel.app/">here</a>.
 </h6>
 
 ## 💻 Project
@@ -24,8 +24,6 @@
 
 - **Tailwind CSS**: A CSS framework that offers several classes for use that are already pre-styled.
 
-- **Stripe API**: A popular payment API for securely processing online payments.
-
 ## Features 📦
 
 - **Sign in with Google**: We allow users to sign in using their Google accounts for a simplified authentication experience.
@@ -35,7 +33,5 @@
 - **Product Discounts**: Some products may have special discounts, allowing users to save on their purchases.
 
 - **Shopping Cart Management**: Users can add products to their shopping cart, remove products and also modify the quantity of a product in the shopping cart as needed.
-
-- **Order payment with the Stripe API**: We offer a secure online payment experience with Stripe API integration, including the use of webhooks to process payment-related events. Users can complete their orders easily and securely.
 
 Made with ♥ by Gabriel :wave:
