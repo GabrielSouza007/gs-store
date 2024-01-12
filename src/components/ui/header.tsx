@@ -1,21 +1,25 @@
 "use client";
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
 import { CartContext } from "@/providers/cart";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import { Separator } from "@radix-ui/react-separator";
 import {
   AlignJustify,
   HomeIcon,
   LogInIcon,
+  LogOut,
   LogOutIcon,
   MenuIcon,
   Package,
   PercentIcon,
   ShoppingCartIcon,
+  User,
 } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useContext } from "react";
+import { RenderOnClient } from "../render-on-client";
+import { Badge } from "./badge";
 import { Button } from "./button";
 import { Card } from "./card";
 import Cart from "./cart";
@@ -46,7 +50,7 @@ const Header = () => {
     <Card className="flex items-center justify-between p-[1.875rem]">
       <Sheet>
         <SheetTrigger asChild>
-          <Button size="icon" variant={"outline"}>
+          <Button className="md:hidden" size="icon" variant={"outline"}>
             <MenuIcon />
           </Button>
         </SheetTrigger>
@@ -156,22 +160,62 @@ const Header = () => {
         </h1>
       </Link>
 
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button size="icon" variant="outline" className="relative">
-            {cartQuantityItems > 0 && (
-              <span className="absolute right-[calc(-1.25rem/2)] top-[calc(-1.25rem/2)] flex h-6 w-6 items-center justify-center rounded-lg bg-primary text-sm font-bold">
-                {cartQuantityItems}
-              </span>
-            )}
-            <ShoppingCartIcon />
-          </Button>
-        </SheetTrigger>
+      <div className="hidden md:block ">
+        <div className="flex h-5 items-center space-x-6 text-sm">
+          <div>
+            <Link className="text-sm font-semibold" href="/">
+              Início
+            </Link>
+          </div>
 
-        <SheetContent className="w-full lg:w-[21.875rem]">
-          <Cart />
-        </SheetContent>
-      </Sheet>
+          <Separator orientation="vertical" />
+
+          <div>
+            <Link className="text-sm font-bold" href="/catalog">
+              Catálogo
+            </Link>
+          </div>
+
+          <Separator className="text-sm font-bold" orientation="vertical" />
+
+          <div>
+            <Link className="text-sm font-bold" href="/deals">
+              Ofertas
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-x-4">
+        {!data || !data.user ? (
+          <Button size="icon" variant="outline" onClick={handleLoginClick}>
+            <User />
+          </Button>
+        ) : (
+          <Button size="icon" variant="outline" onClick={handleLogoutClick}>
+            <LogOut />
+          </Button>
+        )}
+
+        <RenderOnClient>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button size="icon" variant="outline" className="relative">
+                {cartQuantityItems > 0 && (
+                  <Badge className="absolute right-[calc(-1.25rem/2)] top-[calc(-1.25rem/2)] flex h-6 w-6 items-center justify-center rounded-lg bg-primary text-sm font-bold">
+                    {cartQuantityItems}
+                  </Badge>
+                )}
+                <ShoppingCartIcon />
+              </Button>
+            </SheetTrigger>
+
+            <SheetContent className="w-full lg:w-[21.875rem]">
+              <Cart />
+            </SheetContent>
+          </Sheet>
+        </RenderOnClient>
+      </div>
     </Card>
   );
 };
