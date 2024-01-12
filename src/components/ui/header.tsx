@@ -186,16 +186,18 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="space-x-4">
-        {!data || !data.user ? (
-          <Button size="icon" variant="outline" onClick={handleLoginClick}>
-            <User />
-          </Button>
-        ) : (
-          <Button size="icon" variant="outline" onClick={handleLogoutClick}>
-            <LogOut />
-          </Button>
-        )}
+      <div className="flex gap-3">
+        <div className="hidden md:flex">
+          {!data || !data.user ? (
+            <Button size="icon" variant="outline" onClick={handleLoginClick}>
+              <User />
+            </Button>
+          ) : (
+            <Button size="icon" variant="outline" onClick={handleLogoutClick}>
+              <LogOut />
+            </Button>
+          )}
+        </div>
 
         <RenderOnClient>
           <Sheet>
