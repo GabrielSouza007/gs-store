@@ -24,7 +24,7 @@ const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
           height={0}
           width={0}
           sizes="100vw"
-          className="h-auto max-h-[70%] w-auto max-w-[80%]"
+          className="h-auto max-h-[70%] w-auto max-w-[80%] object-contain"
           style={{
             objectFit: "contain",
           }}
@@ -35,7 +35,7 @@ const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
         {imageUrls.map((imageUrls) => (
           <button
             key={imageUrls}
-            className={`flex h-[100px] w-full items-center justify-center rounded-lg bg-accent
+            className={`flex h-[80px] w-full items-center justify-center rounded-lg bg-accent
             ${
               imageUrls === currentImage &&
               "border-2 border-solid border-primary"
