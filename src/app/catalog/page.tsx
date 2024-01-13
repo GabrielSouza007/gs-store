@@ -6,7 +6,7 @@ import CategoryItem from "./components/category-items";
 const CatalogPage = async () => {
   const categories = await db.category.findMany({});
   return (
-    <div className="flex flex-col gap-8 p-5 lg:container">
+    <div className="flex flex-col gap-8 p-5 lg:container md:gap-10">
       <Badge variant="heading">
         <AlignJustify size={16} />
         Catálogo

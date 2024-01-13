@@ -36,6 +36,7 @@ export default async function Home() {
         <Link href="/deals">
           <PromoBanner
             src="/deals-banner.svg"
+            priority={true}
             className="hidden h-auto w-full lg:block"
             alt={"Até 55% de desconto esse mês!"}
           />
