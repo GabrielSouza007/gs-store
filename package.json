@@ -9,8 +9,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "prepare": "prisma generate",
-    "studio": "prisma studio",
-    "stripe:listen": "stripe listen --forward-to gs-store.vercel.app/api/order/payment-success"
+    "studio": "prisma studio"
   },
   "prisma": {
     "seed": "node prisma/seed.ts"
@@ -24,7 +23,6 @@
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
-    "@stripe/stripe-js": "^2.2.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "date-fns": "^3.0.6",
@@ -33,7 +31,6 @@
     "next-auth": "^4.24.5",
     "react": "^18",
     "react-dom": "^18",
-    "stripe": "^14.9.0",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7"
   },
