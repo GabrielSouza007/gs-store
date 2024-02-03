@@ -1,8 +1,6 @@
-import { createCheckout } from "@/actions/checkout";
 import { createOrder } from "@/actions/order";
 import { computeProductTotalPrices } from "@/helpers/products";
 import { CartContext } from "@/providers/cart";
-import { loadStripe } from "@stripe/stripe-js";
 import { ShoppingCartIcon } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
@@ -26,14 +24,6 @@ const Cart = () => {
     }
 
     const order = await createOrder(products, (data?.user as any).id);
-
-    const checkout = await createCheckout(products, order.id);
-
-    const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
-
-    stripe?.redirectToCheckout({
-      sessionId: checkout.id,
-    });
   };
 
   return (
